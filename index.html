@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- <link href="index.css" rel="stylesheet"> -->
+    <!-- Load the latest version of TensorFlow.js -->
+    <script src="https://unpkg.com/@tensorflow/tfjs@1.2.8/dist/tf.min.js"></script>
+    <script src="https://unpkg.com/@tensorflow-models/mobilenet"></script>
+  </head>
+  <body>
+    <div id="bodyDiv" class="container">
+        <div class="page-header">
+            <h1>Image Classifier</h1>
+            <h3>Using TensorFlow.js and MobileNet</h3>
+        </div>
+                <div id="console"></div>
+        <!-- Add an image that we will use to test -->
+        <div class="row">
+        <div class="col-md-3"></div>
+        <div id="inputDiv" class="col-md-6">
+            <img id="img" crossOrigin src="https://i.imgur.com/JlUvsxa.jpg" width=227 height=227/>
+    
+            <form>
+                <label class="btn btn-info">
+                    Browse<input type="file" name="fileupload" value="fileupload" id="fileupload" hidden>
+                </label>
+            </form>
+        </div>
+        <div class="col-md-3"></div>
+        </div>    
+    <!-- Output prettified results here-->
+        <div class="row">
+        <div class="col-md-3"></div>
+        <p id="modelStatus">Loading Data Model...</p>
+        <div id="ouputDiv" class="col-md-6">
+            <table id="outputTable" hidden="true" class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Prediction</th>
+                        <th>Probability</th>
+                    </tr>
+                </thead>
+                <tbody id="outputTable_tbody">
+                
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-3"></div>
+        </div>
+    </div>  
+
+    <!-- Load index.js after the content of the page -->
+    <script src="index.js"></script>
+  </body>
+</html>
